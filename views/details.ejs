@@ -1,0 +1,44 @@
+
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+
+<body>
+    <%- include("./partials/navbar.ejs") %>
+
+    <div class="jumbotron jumbotron-fluid bg-dark">
+  
+        <div class="jumbotron-background">
+          <img src="" class="blur ">
+        </div>
+      
+        <div class="container text-white row">
+      
+            <div class="col-8">
+                <h1 class="display-4"><%= course.title %></h1>
+                <p class="lead"><%= course.published_title %></p>
+                <hr class="my-4">
+                <p class="lead"> You can find more details at <a href="<%= course.url %>">this</a> page </p>
+                <hr class="my-4">
+                <p class="lead"><%= course.visible_instructors.name %></p>
+            </div>
+          
+        
+          <div class="col-md-4">
+            <div class="card profile-card-1">
+                <img src="<%= course.image_480x270 %>" alt="profile-sample1" class="background"/>
+                <img src="<%= course.visible_instructors[0].image_100x100 %>" alt="profile-image" class="profile"/>
+                <div class="card-content">
+                <h2><%= course.visible_instructors[0].display_name %><small><%= course.visible_instructors[0].job_title %></small></h3>
+                </div>
+            </div>
+        </div>
+
+        <a class="btn btn-primary btn-lg" href="#" role="button"><%= course.price %></a>
+
+        </div>
+    </div>   
+
+
+    <%- include("./partials/footer.ejs") %>
+</body>
+</html>

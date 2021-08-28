@@ -1,0 +1,86 @@
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+
+<body>
+    <%- include("./partials/navbar.ejs") %>
+
+    <div class="container-fluid px-0">
+        <div class="row mx-0">
+            <div class="col-12 px-0">
+                <img class="img-fluid w-200" src="https://images.squarespace-cdn.com/content/v1/5d80dcd462b269531121b9a3/1576237668942-0338QNJ0DB55MT52MZNI/100-inspirational-study-quotes.jpg"  alt="">
+                <div class="carousel-caption">
+                    <h1> Move Behind the limitations of Learning</h1>
+                    <Button type="button" class="btn btn-primary bg-dark">Get Started</Button>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+        <h1 class="display-4">Our Courses</h1>
+        <div  class="container-fluid">
+            
+            <% courses.forEach(course => {  %>
+
+                <div class="d-inline-block">
+                <div class="card" style="width: 400px;">
+                    <img class="card-img-top" src="<%= course.image_125_H %>" alt="Card image cap">
+                    <div class="card-body">
+                    <h5 class="card-title"><%= course.title %></h5>
+                    <p class="card-text"><%= course.headline %></p>
+                    <a href="/<%= course.id %>" class="btn btn-primary">Start Learning</a>
+                    </div>
+                </div>
+            </div>
+
+        
+            <% }) %>
+        </div>
+    </div>
+
+
+
+<div class="container-fluid">
+    <h1 class="display-4">Our Recent Posts</h1>
+
+    <div class="container-fluid">
+        <div class="card-deck">
+            
+            <div class="card ">
+                <div class="card-body">
+                <h5 class="card-title">Author </h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-body">
+                <h5 class="card-title">Author </h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-body">
+                <h5 class="card-title">Author </h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                </div>
+            </div>
+            <div class="card ">
+                <div class="card-body">
+                <h5 class="card-title">Author </h5>
+                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                </div>
+            </div>
+            
+
+        </div>
+    </div>
+
+</div>
+
+    
+
+
+    <%- include("./partials/footer.ejs") %>
+</body>
+</html>

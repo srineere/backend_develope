@@ -1,0 +1,28 @@
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+
+<body>
+    <%- include("./partials/navbar.ejs") %>
+
+    <div class="container-fluid">
+      <h1 class="display-4 text-center">Our Instructors</h1>
+      <div  class="container-fluid">
+          
+          <% courses.forEach(course => {  %>
+
+            <div class="container-fluid">
+              <div class="card profile-card-1">
+                  <img src="<%= course.image_480x270 %>" alt="profile-sample1" class="background"/>
+                  <img src="<%= course.visible_instructors[0].image_100x100 %>" alt="profile-image" class="profile"/>
+                  <div class="card-content">
+                  <h2><%= course.visible_instructors[0].display_name %><small><%= course.visible_instructors[0].job_title %></small></h3>
+                  </div>
+              </div>
+            </div>
+          <% }) %>
+      </div>
+    </div>
+
+
+</body>
+</html>
